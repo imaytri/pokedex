@@ -2,7 +2,16 @@
 require_once('lib.php');
 
 //======= init ==============//
-$q = "piKachU";
+$q = "";
+if (isset($argc)) {
+	for ($i = 1; $i < $argc; $i++) {
+        $q .= $argv[$i] . " ";
+	}
+}
+else {
+	echo "Please type pokemon/item that you want to know.";
+}
+
 $q_url = changeStrFormat($q);
 $output = "";
 
